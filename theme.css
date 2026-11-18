@@ -722,6 +722,17 @@ html:not(.dark){
     }
   }
 }
+/* Switches, sliders, checkboxes and primary buttons use --primary. T3 maps it
+   to messageAction, which is the composer's send button, so set it here and
+   leave that button alone. */
+html[data-theme-id]:not([data-theme-id=""]):root{
+  --primary:#ff7f36;
+  --primary-foreground:#1a0f06;
+  &:not(.dark){
+    --primary:#c2410c;
+    --primary-foreground:#fff7ef
+  }
+}
 [data-slot=button]{
   transition:box-shadow .2s,transform .12s,background-color .2s;
   &:active{
